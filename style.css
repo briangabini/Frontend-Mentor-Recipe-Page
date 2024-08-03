@@ -134,19 +134,25 @@ body {
     height: 100%;
 }
 
-.container > img {
-    width: 100%;
-    height: auto;
+.image-container {
+    margin: -16px; /* Negative margin to offset the container's padding */
 }
+
+.hero-image {
+    width: 100%;
+}
+
+
 
 /* Media queries for larger screens */
 @media (min-width: 600px) {
-    html, body {
-        background-color: hsl(30, 54%, 90%);
-    }
+
 }
 
 @media (min-width: 1024px) {
+    html, body {
+        background-color: hsl(30, 54%, 90%);
+    }
     .container {
     }
 }
