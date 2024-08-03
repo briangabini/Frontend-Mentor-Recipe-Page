@@ -109,6 +109,44 @@ p, h1, h2, h3, h4, h5, h6 {
     font-style: normal;
 }
 
+html, body {
+    height: 100%;
+    background-color: white; /* Default background color for mobile screens */
+}
+
 body {
     font-family: 'Outfit', sans-serif;
+}
+
+/* Mobile styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+}
+
+.container > img {
+    width: 100%;
+    height: auto;
+}
+
+/* Media queries for larger screens */
+@media (min-width: 600px) {
+    html, body {
+        background-color: hsl(30, 54%, 90%);
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+    }
 }
