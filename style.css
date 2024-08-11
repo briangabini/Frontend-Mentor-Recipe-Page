@@ -121,8 +121,9 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 html, body {
-    height: 100%;
     background-color: var(--stone-100);
+    margin: 0;
+    height: auto;
 }
 
 body {
@@ -145,8 +146,6 @@ li > p {
     padding: 32px;
     gap: 32px;
     background-color: white;
-    top: 50%;
-    left: 50%;
     width: 100%;
     height: auto;
 }
@@ -248,7 +247,7 @@ table {
     border-collapse: collapse;
 }
 
-tr {
+tr:not(:last-child) {
     border-bottom: 1px solid var(--stone-150);
 }
 
@@ -271,10 +270,8 @@ td {
 @media (min-width: 600px) {
     .container {
         max-width: 700px;
-        padding: 32px;
         margin: 96px auto;
         border-radius: 8px;
-        height: auto;
     }
 
     .image-container {
@@ -285,8 +282,3 @@ td {
         border-radius: 8px;
     }
 }
-
-/*
-@media (min-width: 1024px) {
-
-}*/
