@@ -29,6 +29,17 @@ p, h1, h2, h3, h4, h5, h6 {
     isolation: isolate;
 }
 
+/* VARIABLES */
+:root {
+    --stone-100: hsl(30, 54%, 90%);
+    --stone-150: hsl(30, 18%, 87%);
+    --stone-600: hsl(30, 10%, 34%);
+    --stone-900: hsl(24, 5%, 18%);
+    --brown-800: hsl(14, 45%, 36%);
+    --rose-800: hsl(332, 51%, 32%);
+    --rose-50: hsl(330, 100%, 98%);
+}
+
 /* TYPOGRAPHY */
 /* Define the font-face for variable font */
 @font-face {
@@ -111,48 +122,171 @@ p, h1, h2, h3, h4, h5, h6 {
 
 html, body {
     height: 100%;
-    background-color: white; /* Default background color for mobile screens */
+    background-color: var(--stone-100);
 }
 
 body {
     font-family: 'Outfit', sans-serif;
 }
 
+p {
+    color: var(--stone-600);
+}
+
+li > p {
+    position: relative;
+    left: 16px;
+}
+
 /* Mobile styles */
 .container {
     display: flex;
     flex-direction: column;
-    padding: 16px;
-    gap: 16px;
+    padding: 32px;
+    gap: 32px;
     background-color: white;
-    position: absolute;
     top: 50%;
     left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
     width: 100%;
-    height: 100%;
+    height: auto;
+}
+
+.styled-line {
+    border: none;
+    border-top: 1px solid var(--stone-150);
 }
 
 .image-container {
-    margin: -16px; /* Negative margin to offset the container's padding */
+    margin: -32px -32px 0 -32px; /* Negative margin to offset the container's padding */
 }
 
-.hero-image {
+.recipe-title {
+    font-family: 'YoungSerif', serif;
+    font-weight: 500;
+    line-height: 1.0;
+}
+
+.preparation-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px;
+    background-color: var(--rose-50);
+    border-radius: 8px;
+}
+
+.preparation-section > h3 {
+    color: var(--rose-800);
+}
+
+ul {
+    list-style-position: outside;
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+ol {
+    list-style-position: outside;
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+li::marker {
+    font-size: 0.75em;
+}
+
+.preparation-section li::marker {
+    color: var(--rose-800);
+}
+
+h2 {
+    font-family: 'YoungSerif', serif;
+    color: var(--brown-800);
+}
+
+.ingredients-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ingredients-section li::marker {
+    color: var(--brown-800);
+}
+
+.instructions-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.instructions-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.instructions-section li::marker {
+    color: var(--brown-800);
+    font-family: 'Outfit', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.nutrition-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+table {
     width: 100%;
+    border-collapse: collapse;
 }
 
+tr {
+    border-bottom: 1px solid var(--stone-150);
+}
 
+th, td {
+    text-align: left;
+}
+
+th {
+    color: var(--stone-600);
+    font-weight: 400;
+    padding-left: 32px;
+}
+
+td {
+    font-weight: 700;
+    color: var(--brown-800);
+}
 
 /* Media queries for larger screens */
 @media (min-width: 600px) {
-
-}
-
-@media (min-width: 1024px) {
-    html, body {
-        background-color: hsl(30, 54%, 90%);
-    }
     .container {
+        max-width: 700px;
+        padding: 32px;
+        margin: 96px auto;
+        border-radius: 8px;
+        height: auto;
+    }
+
+    .image-container {
+        margin: 0;
+    }
+
+    .hero-image {
+        border-radius: 8px;
     }
 }
+
+/*
+@media (min-width: 1024px) {
+
+}*/
